@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Frontend Mentor | Time tracking dashboard</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      body {
+        width: 800px;
+        min-height: 100vh;
+        display: grid;
+        min-height: 100vh;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        place-content: center;
+        place-items: center;
+        background-color: hsl(226, 43%, 10%);
+      }
+      .container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(12, 1fr);
+        width: 900px;
+        height: 600px;
+        gap: 20px;
+        margin-left: 500px;
+        margin-top: 100px;
+        font-family: "Rubik";
+      }
+      .box1 {
+        background-color: hsl(246, 80%, 60%);
+        grid-column: 1/2;
+        grid-row: 1/7;
+        border-radius: 7px;
+        padding: 20px;
+        position: relative;
+      }
+      .box2 {
+        background-color: hsl(235, 46%, 20%);
+        grid-column: 1/2;
+        grid-row: 3/9;
+        border-radius: 7px;
+        padding: 20px;
+        flex-direction: row;
+        line-height: 7px;
+        margin-top: 15px;
+        font-size: 15px;
+      }
+      .box3 {
+        background-color: hsl(15, 100%, 70%);
+        grid-column: 2/3;
+        grid-row: 1/3;
+        border-radius: 7px;
+        padding: 20px;
+        overflow: hidden;
+      }
+      .box4 {
+        background-color: hsl(235, 46%, 20%);
+        grid-column: 2/3;
+        grid-row: 2/5;
+        border-radius: 7px;
+        padding: 20px;
+        position: relative;
+      }
+      .box5 {
+        background-color: hsl(145, 58%, 55%);
+        grid-column: 2/3;
+        grid-row: 5/8;
+        border-radius: 7px;
+        padding: 20px;
+        overflow: hidden;
+      }
+      .box6 {
+        background-color: hsl(235, 46%, 20%);
+        grid-column: 2/3;
+        grid-row: 6/9;
+        border-radius: 7px;
+        padding: 20px;
+        position: relative;
+      }
+
+      .box7 {
+        background-color: hsl(195, 74%, 62%);
+        grid-column: 3/4;
+        grid-row: 1/3;
+        border-radius: 7px;
+        padding: 20px;
+        overflow: hidden;
+      }
+      .box8 {
+        background-color: hsl(235, 46%, 20%);
+        grid-column: 3/4;
+        grid-row: 2/5;
+        border-radius: 7px;
+        padding: 20px;
+        position: relative;
+      }
+      .box9 {
+        background-color: hsl(264, 64%, 52%);
+        grid-column: 3/4;
+        grid-row: 5/8;
+        border-radius: 7px;
+        padding: 20px;
+        overflow: hidden;
+      }
+      .box10 {
+        background-color: hsl(235, 46%, 20%);
+        grid-column: 3/4;
+        grid-row: 6/9;
+        border-radius: 7px;
+        padding: 20px;
+        position: relative;
+      }
+
+      .box11 {
+        background-color: hsl(348, 100%, 68%);
+        grid-column: 4/5;
+        grid-row: 1/3;
+        border-radius: 7px;
+        padding: 20px;
+        overflow: hidden;
+      }
+      .box12 {
+        background-color: hsl(235, 46%, 20%);
+        grid-column: 4/5;
+        grid-row: 2/5;
+        border-radius: 7px;
+        padding: 20px;
+        position: relative;
+      }
+      .box13 {
+        background-color: hsl(264, 64%, 52%);
+        grid-column: 4/5;
+        grid-row: 5/8;
+        border-radius: 7px;
+        padding: 20px;
+        overflow: hidden;
+      }
+      .box14 {
+        background-color: hsl(235, 46%, 20%);
+        grid-column: 4/5;
+        grid-row: 6/9;
+        border-radius: 7px;
+        padding: 20px;
+        position: relative;
+      }
+      .box1 img {
+        width: 60px;
+
+        border: 2px solid white;
+        border-radius: 50px;
+      }
+    </style>
+    <div class="container">
+      <div class="box1">
+        <img src="images/image-jeremy.png" alt="#" />
+        <p style="font-size: 12px; color: rgb(196, 198, 199); opacity: 0.7">
+          Report for
+        </p>
+        <h1
+          style="
+            font-weight: 100;
+            color: white;
+            opacity: 0.9;
+            margin-left: 10px;
+            font-size: 25px;
+            line-height: -10px;
+          "
+        >
+          Jeremy Robson
+        </h1>
+      </div>
+      <div class="box2">
+        <p style="opacity: 0.3; margin-top: 170px; color: white">Daily</p>
+        <p style="color: white; opacity: 0.8">Weekly</p>
+        <p style="opacity: 0.3; color: white">Monthly</p>
+      </div>
+      <div class="box3">
+        <img
+          style="width: 60px; margin-left: 120px; margin-top: -23px"
+          src="images/icon-work.svg"
+          alt="#"
+        />
+      </div>
+      <div class="box4">
+        <span style="color: white">Work</span>
+        <img
+          style="width: 15px; margin-left: 110px"
+          src="images/icon-ellipsis.svg"
+          alt="#"
+        />
+        <h2
+          style="
+            font-weight: 200;
+            font-size: 35px;
+            margin-top: -12px;
+            color: white;
+          "
+        >
+          32hrs
+        </h2>
+        <p
+          style="opacity: 0.5; color: white; margin-top: -50px; font-size: 12px"
+        >
+          Last Week -36hrs
+        </p>
+      </div>
+      <div class="box5">
+        <img
+          style="width: 60px; margin-left: 120px; margin-top: -23px"
+          src="images/icon-exercise.svg"
+          alt="#"
+        />
+      </div>
+      <div class="box6">
+        <span style="color: white">Work</span>
+        <img
+          style="width: 15px; margin-left: 110px"
+          src="images/icon-ellipsis.svg"
+          alt="#"
+        />
+        <h2
+          style="
+            font-weight: 200;
+            font-size: 35px;
+            margin-top: -12px;
+            color: white;
+          "
+        >
+          4hrs
+        </h2>
+        <p
+          style="opacity: 0.5; color: white; margin-top: -50px; font-size: 12px"
+        >
+          Last Week -5hrs
+        </p>
+      </div>
+      <div class="box7">
+        <img
+          style="width: 60px; margin-left: 120px; margin-top: -23px"
+          src="images/icon-play.svg"
+          alt="#"
+        />
+      </div>
+      <div class="box8">
+        <span style="color: white">play</span>
+        <img
+          style="width: 15px; margin-left: 110px"
+          src="images/icon-ellipsis.svg"
+          alt="#"
+        />
+        <h2
+          style="
+            font-weight: 200;
+            font-size: 35px;
+            margin-top: -12px;
+            color: white;
+          "
+        >
+          10hrs
+        </h2>
+        <p
+          style="opacity: 0.5; color: white; margin-top: -50px; font-size: 12px"
+        >
+          Last Week -8hrs
+        </p>
+      </div>
+      <div class="box9">
+        <img
+          style="width: 60px; margin-left: 120px; margin-top: -23px"
+          src="images/icon-social.svg"
+          alt="#"
+        />
+      </div>
+      <div class="box10">
+        <span style="color: white">Work</span>
+        <img
+          style="width: 15px; margin-left: 110px"
+          src="images/icon-ellipsis.svg"
+          alt="#"
+        />
+        <h2
+          style="
+            font-weight: 200;
+            font-size: 35px;
+            margin-top: -12px;
+            color: white;
+          "
+        >
+          4hrs
+        </h2>
+        <p
+          style="opacity: 0.5; color: white; margin-top: -50px; font-size: 12px"
+        >
+          Last Week -36hrs
+        </p>
+      </div>
+      <div class="box11">
+        <img
+          style="width: 60px; margin-left: 120px; margin-top: -23px"
+          src="images/icon-study.svg"
+          alt="#"
+        />
+      </div>
+      <div class="box12">
+        <span style="color: white">Work</span>
+        <img
+          style="width: 15px; margin-left: 110px"
+          src="images/icon-ellipsis.svg"
+          alt="#"
+        />
+        <h2
+          style="
+            font-weight: 200;
+            font-size: 35px;
+            margin-top: -12px;
+            color: white;
+          "
+        >
+          32hrs
+        </h2>
+        <p
+          style="opacity: 0.5; color: white; margin-top: -50px; font-size: 12px"
+        >
+          Last Week -36hrs
+        </p>
+      </div>
+      <div class="box13">
+        <img
+          style="width: 60px; margin-left: 120px; margin-top: -23px"
+          src="images/icon-self-care.svg"
+          alt="#"
+        />
+      </div>
+      <div class="box14">
+        <span style="color: white">Work</span>
+        <img
+          style="width: 15px; margin-left: 110px"
+          src="images/icon-ellipsis.svg"
+          alt="#"
+        />
+        <h2
+          style="
+            font-weight: 200;
+            font-size: 35px;
+            margin-top: -12px;
+            color: white;
+          "
+        >
+          2hrs
+        </h2>
+        <p
+          style="opacity: 0.5; color: white; margin-top: -50px; font-size: 12px"
+        >
+          Last Week -36hrs
+        </p>
+      </div>
+    </div>
+  </head>
+  <body>
+    Report for Jeremy Robson Daily Weekly Monthly Work 5hrs
+    <!-- daily -->
+    Previous - 7hrs
+    <!-- daily -->
+    32hrs
+    <!-- weekly -->
+    Previous - 36hrs
+    <!-- weekly -->
+    103hrs
+    <!-- monthly -->
+    Previous - 128hrs
+    <!-- monthly -->
+
+    Play 1hr
+    <!-- daily -->
+    Previous - 2hrs
+    <!-- daily -->
+    10hrs
+    <!-- weekly -->
+    Previous - 8hrs
+    <!-- weekly -->
+    23hrs
+    <!-- monthly -->
+    Previous - 29hrs
+    <!-- monthly -->
+
+    Study 0hrs
+    <!-- daily -->
+    Previous - 1hr
+    <!-- daily -->
+    4hrs
+    <!-- weekly -->
+    Previous - 7hrs
+    <!-- weekly -->
+    13hrs
+    <!-- monthly -->
+    Previous - 19hrs
+    <!-- monthly -->
+
+    Exercise 1hr
+    <!-- daily -->
+    Previous - 1hr
+    <!-- daily -->
+    4hrs
+    <!-- weekly -->
+    Previous - 5hrs
+    <!-- weekly -->
+    11hrs
+    <!-- monthly -->
+    Previous - 18hrs
+    <!-- monthly -->
+
+    Social 1hr
+    <!-- daily -->
+    Previous - 3hrs
+    <!-- daily -->
+    5hrs
+    <!-- weekly -->
+    Previous - 10hrs
+    <!-- weekly -->
+    21hrs
+    <!-- monthly -->
+    Previous - 23hrs
+    <!-- monthly -->
+
+    Self Care 0hrs
+    <!-- daily -->
+    Previous - 1hr
+    <!-- daily -->
+    2hrs
+    <!-- weekly -->
+    Previous - 2hrs
+    <!-- weekly -->
+    7hrs
+    <!-- monthly -->
+    Previous - 11hrs
+    <!-- monthly -->
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </div>
+  </body>
+</html>
